@@ -53,11 +53,12 @@
 
          /*4. PROGRAMAR UNA FUNCION QUE TE DEVUELVA EL TEXTO RECORTADO SEGUN EL NUMERO DE 
          CARACTERES INDICADOS PE. miFuncion("Hola Mundo", 4) devolvera "Hola"*/
-         const recortarTexto = () =>{
-             
+         const recortarTexto = (cadena , longitud = undefined) =>{
+             (!cadena)
+             ?console.warn("NO INGRESASTE UNA CADENA DE TEXTO")
+             :console.info(cadena.slice(0,longitud));
          }
-         
-         recortarTexto()
+         //recortarTexto("HOLA MUNDO", 2)
     
 
 
@@ -70,16 +71,16 @@
 
        window.document.addEventListener("click", (e)=>{
            if(e.target.id === "boton1"){
-                let num1 = document.querySelector("#dato1").value
-                let num2 = document.querySelector("#dato2").value
-                let num3 = document.querySelector("#dato3").value
+                let num1 = parseFloat(document.querySelector("#dato1").value)
+                let num2 = parseFloat(document.querySelector("#dato2").value)
+                let num3 = parseFloat(document.querySelector("#dato3").value)
                 mostrarResult.textContent = numeroMayor(num1, num2, num3)
 
            }else if(e.target.id === "boton2"){
-                let num1 = document.querySelector("#dato1").value
-                let num2 = document.querySelector("#dato2").value
-                let num3 = document.querySelector("#dato3").value
-                mostrarResult.textContent = numeroMenor(num1, num2, num3)
+                let num11 = parseFloat(document.querySelector("#dato1").value)
+                let num12 = parseFloat(document.querySelector("#dato2").value)
+                let num13 = parseFloat(document.querySelector("#dato3").value)
+                mostrarResult.textContent = numeroMenor(num11, num12, num13)
            }else if(e.target.id === "boton3"){
                 let caracter = document.querySelector("#caracter").value
                 mostrarResult.textContent = contarCaracteres(caracter)
