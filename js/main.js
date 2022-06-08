@@ -59,8 +59,108 @@
              :console.info(cadena.slice(0,longitud));
          }
          //recortarTexto("HOLA MUNDO", 2)
+
+
+         /*5. PROGRAMAR UNA FUNCION QUE DADO UN STRING TE DEVUELVA UN ARRAY DE TEXTOS
+         SEPARADOS POR CIERTO CARACTER PE. MI FINCION ("HOLA QUE TAL"," " ) DEVOLVERA ("HOLA", "QUE", "TAL")*/
+         const cadenaArreglo = (cadena = "", separador = undefined) =>
+         (!cadena)
+         ? console.warn("No ingresaste una cadena de texto")
+         :(separador === undefined)
+         ?console.warn("No ingresaste el caracter separador")
+         :console.info(cadena.split(separador));
+
+         //cadenaArreglo("ene,feb,mar,abr,may,jun" , "") 
     
 
+
+          /*6. PROGRAMAR UNA FUNCION QUE ME MUESTRE SI EL NUMERO ES PAR O IMPAR*/
+          const numeroParImpar = (numero) =>{
+              if (numero % 2 == 0){
+                 return('Par')
+              }else{
+                 return('Impar')
+              }
+          }
+
+
+          /*7. PROGRAMAR UNA FUNCION QUE MUESTRE LOS NUMEROS PARES DE UN NUMERO ENTERO PE.
+          "NUM = 2544" QUE ME MUESTRE "244"*/
+          const mostrarPares = (nume = 2544) =>{
+             
+          }
+
+          /*8.PROGRAMAR UNA FUNCION QUE CUENTE EL NUMERO DE VUELTAS ASIGNADO**/
+          const numeroVueltas = (num) =>{
+            let vue = 1
+            while( vue < num){
+                vue ++ 
+            }
+            return vue
+          }
+           
+
+          /*9. PROGRAMAR UNA FUNCION QUE NOS DEVUELVA SI UN NUMERO ES MULTIPLO DE TRES */
+          const multiplosDeTres = (dato) =>{
+              if(dato % 3 == 0){
+                  return ("Es multiplo de 3")
+              }else{
+                  return ("No es multiplo de 3")
+              }
+          }
+          
+
+          /*10. PROGRAMAR UNA FUNCION QUE CUENTE CUANTOS DIGITOS CONTIENE UN NUMERO */
+          const contarDigitos = (valor) =>{
+            let contador = 0
+            while(valor > 0){
+                valor = valor / 10
+                valor = parseInt(valor)
+                contador = contador + 1
+            }
+            return (`Cantidad: ${contador} `)
+          }
+
+          /*11. PROGRAMAR UNA FUNCION QUE SUME LOS NUMEROS PARES DE UN NUMERO ENTERO*/
+          
+          const contarNumerosPares = (dato) =>{
+              let contador = 0
+              let aux = 0
+              while( dato > contador){
+                  res = dato % 10        //=> 8 
+                  dato = dato / 10       //=> 2479.8 
+                  dato = parseInt(dato)  //=> 2479
+
+                  if(res % 2 == 1){
+                      aux = aux + res
+                  }
+              }
+              return (`La suma de los pares es: ${aux}`)
+          }
+
+          /*12. PROGRAMAR UNA FINCION QUE ME DEVUELVA NUMEROS REPETIDOS DE UN ENTERO**/
+          const numeroRepetidos = (valor = 15525) =>{
+              let contador = 0
+              let extraido = 0
+              let guardado = 0 
+              for(let i = 0 ; valor < i; i++){
+                  extraido = valor % 10      //=> 5
+                  valor = valor / 10         //=> 1552.5
+                  valor = parseInt(valor)    //=> 1552 
+                  
+                  if(extraido == guardado){
+                       contador = contador + 1; 
+                  }
+                  
+              }
+             
+          }
+          
+          
+
+           
+          
+         
 
 
 
@@ -84,5 +184,20 @@
            }else if(e.target.id === "boton3"){
                 let caracter = document.querySelector("#caracter").value
                 mostrarResult.textContent = contarCaracteres(caracter)
-           }
+           }else if(e.target.id === "boton4"){
+               let campo1 = parseFloat(document.querySelector("#dato1").value)
+               mostrarResult.textContent = numeroParImpar(campo1)
+           }else if(e.target.id === "boton5"){
+                let numero = parseFloat(document.querySelector("#dato1").value)
+                mostrarResult.textContent =  numeroVueltas(numero)
+           }else if(e.target.id === "boton6"){
+                let dato = parseInt(document.querySelector("#dato1").value)
+                mostrarResult.textContent = multiplosDeTres(dato)
+           }else if(e.target.id === "boton7"){
+                let valor = parseInt(document.querySelector("#dato1").value)
+                mostrarResult.textContent = contarDigitos(valor)
+           }else if(e.target.id === "boton8"){
+            let valor = parseInt(document.querySelector("#dato1").value)
+            mostrarResult.textContent = contarNumerosPares(valor)
+       }
        })
