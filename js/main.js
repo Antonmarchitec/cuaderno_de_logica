@@ -43,8 +43,8 @@
             }
         }    
         
-       /*3. PROGRAMAR UNA FUNCION QUE CUENTE EL NUMERO DE CARACTERES DE UNA CADENA 
-       DE TEXTO PE MI FUNCION "HOLA MUNDO" DEVOLVERA 10*/
+        /*3. PROGRAMAR UNA FUNCION QUE CUENTE EL NUMERO DE CARACTERES DE UNA CADENA 
+        DE TEXTO PE MI FUNCION "HOLA MUNDO" DEVOLVERA 10*/
          const contarCaracteres = (cadena)=>{
              //let cadena = "HOLA MUNDO"
              let numeroCaracteres = cadena.length
