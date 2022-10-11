@@ -1,4 +1,4 @@
- //FUNCIONES
+ ////FUNCIONES
         //1. Indicar el mayor de 3 numeros ingresados por teclado
         const numeroMayor = (dato1, dato2, dato3) =>{
             if(dato1 > dato2){
